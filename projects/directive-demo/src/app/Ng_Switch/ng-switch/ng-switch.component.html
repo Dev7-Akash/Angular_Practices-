@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-2">
+            <div class="btn-group-vertical">
+                <button (click)="ViewClick('details')" class="btn btn-primary w-100 mb-2">Basic Details</button>
+                <button (click)="ViewClick('preview')" class="btn btn-primary w-100 mb-2">Preview</button>
+                <button (click)="ViewClick('offers')" class="btn btn-primary w-100 mb-2">Offers</button>
+            </div>
+            <div class="mt-4">
+                <select [(ngModel)]="ViewName" class="form-select" name="" id="">
+                    <option value="details">BasicDetails</option>
+                    <option value="preview">Preview</option>
+                    <option value="offers">Offers</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-10">
+            <div [ngSwitch]="ViewName">
+                <div *ngSwitchCase="'details'">
+                    <h3>APPLE iPhone 13 (Blue, 128 GB)</h3>
+                    <span class="bg-success text-white p-2 rounded rounded-2">
+                        <span class="bi bi-star-fill text-white"></span>
+                        4.7
+                    </span>
+                    <span style="color:gray;" class="ms-4">2,27,700 Ratings & 12,145 Reviews</span>
+                    <div class="mt-3">
+                        <h2>₹58,499</h2>
+                    </div>
+                </div>
+                <div *ngSwitchCase="'preview'">
+                    <img src="../../../assets/Iphone13.jpg" height="300" width="300" alt="">
+                </div>
+                <div *ngSwitchCase="'offers'">
+                    <h4>Available Offers</h4>
+                    <ul class="list-unstyled">
+                        <li class="bi bi-tag-fill text-success"><span style="color:black">Bank Offer10% off on ICICI Bank Credit Card EMI Transactions, up to ₹1000, on orders of ₹10,000 and abov</span></li>
+                        <li class="bi bi-tag-fill text-success"><span style="color:black">Bank Offer10% off on ICICI Bank Credit Card EMI Transactions, up to ₹1000, on orders of ₹10,000 and abov</span></li>
+                        <li class="bi bi-tag-fill text-success"><span style="color:black">Bank Offer10% off on ICICI Bank Credit Card EMI Transactions, up to ₹1000, on orders of ₹10,000 and abov</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

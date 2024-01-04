@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Register User</h2>
+    <dl>
+        <dt>UserName</dt>
+        <dd>
+            <input type="text" (keyup)="VerifyUser($event)" name="" id="">
+        </dd>
+        <dd>
+            <h4 [ngClass]="{'text-danger':isInvalid,'text-success':true}">{{UserError}}</h4>
+        </dd>
+    </dl>
+</div>
+<div class="container">
+    <dl>
+        <dt>Enter Name</dt>
+        <dd>
+            <input type="text" (keyup)="CheckChar($event)" name="" id="">
+        </dd>
+        <dd>
+            <h4 [ngClass]="{'text-danger':isInvalid,'text-success':true}">{{UserError}}</h4>
+        </dd>
+    </dl>
+</div>

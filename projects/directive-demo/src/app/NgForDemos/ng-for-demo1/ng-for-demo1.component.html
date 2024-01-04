@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-6">
+            <table class="table table-hover">
+                <tr *ngFor="let item of Menu">
+                    <th>
+                        {{item.category}}
+                    </th>
+                    <td>
+                        <ul>
+                            <li *ngFor="let product of item.products">  {{product}}</li>
+                        </ul>                      
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-6">
+            <select (change)="OnCategoryChange()" class="form-select" [(ngModel)]="category">
+                <option *ngFor="let item of Menu">{{item.category}}</option>
+            </select>
+           <div class="mt-5">
+            <ul class="list-unstyled">
+                <li *ngFor="let product of products">
+                    {{product}}
+                </li>
+            </ul>
+           </div>
+        </div>
+       
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>EmpID</th>
+                        <th>EmpName</th>
+                        <th>Salary</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of employee">
+                        <td>{{item.empID}}</td>
+                        <td>{{item.empName}}</td>
+                        <td>{{item.empSalary}}</td>
+                        <td>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+<div style="height:300px" class="container p-4 bg-light text-dark">
+    <h3>Child Component</h3>
+    <p>{{messageFromParent}}</p>
+    <div>
+        <ul class="list-unstyled">
+            <li *ngFor="let item of coursesFromParent">
+                {{item}}</li>
+        </ul>
+    </div>
+    <div>
+        <button (click)="PrepareData()">
+            Send data to parent</button>
+    </div>
+     <div>
+        <h2>Product Details</h2>
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Image</th>
+            </tr>
+            <tr *ngFor="let item of productsFromParent">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>
+                    <img [src]="item.image"
+                     height="30" width="30" alt="">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+    <form #frmRegister="ngForm" (submit)="Register(frmRegister.value)">
+        <h2>Registration Form</h2>
+        <dl>
+            <dt>Username</dt>
+            <dd>
+                <input type="text" name="username" ngModel #Username="ngModel" >
+            </dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="number" name="Age" ngModel #Age="ngModel" id="">
+            </dd>
+            <dt>City</dt>
+            <dd>
+                <select name="city" #city="ngModel" ngModel id="">
+                    <option>Hyderbad</option>
+                    <option>Goa</option>
+                    <option>Vizag</option>
+                    <option>Mumbai</option>
+                </select>
+            </dd>
+        </dl>
+        <button>Register</button>
+    </form>
+</div>

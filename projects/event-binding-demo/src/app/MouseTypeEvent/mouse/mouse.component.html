@@ -1,0 +1,13 @@
+<div class="container" (mousemove)="MouseMove($event)">
+    <h2>Mouse Events</h2>
+    <img [src]="img_src" width="200"  alt="">
+    <div class="mt-2">
+        <div class="btn-group">
+            <button (mouseover)="SetImage('Iphone')" class="btn" name="Iphone">Iphone</button>
+            <button (mouseover)="SetImage('Watch')" class="btn" name="Watch">Watch</button>
+            <button (mouseover)="SetImage('Led')" class="btn" name="Led">Led</button>
+        </div>        
+    </div>
+    <div style="height: 100px;"></div>
+    <img src="assets/Dragon.gif" alt="" [ngStyle]="styleObj" width="550">
+</div> 

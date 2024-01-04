@@ -1,0 +1,25 @@
+<div class="container">
+    <p>{{name}}</p>
+    <p>uppercase: {{name | uppercase}}</p>
+    <p>lowercase: {{name | lowercase}}</p>
+    <p>titlecase: {{name | titlecase}}</p>
+    <p>slice: {{name | slice:0:7}}</p>
+    <p>{{rate}}</p>
+    <p>percent: {{rate|percent}}</p>
+    <p>{{product}}</p>
+    <p>json: {{product|json}}</p>
+    <div>
+        <ul class="list-unstyled">
+            <li *ngFor="let item of categories|keyvalue">
+                {{item.key}}  => {{item.value}}
+            </li>
+        </ul>
+    </div>
+    <p>{{today}}</p>
+    <p>{{today | date}}</p>
+    <p>{{today | date:'long'}}</p>
+    <p>{{today | date:'short'}}</p>
+    <p>{{cost | currency}}</p>
+    <p>{{cost | currency:'GBP'}}</p>
+    <div style="height:200px;"></div>
+</div>

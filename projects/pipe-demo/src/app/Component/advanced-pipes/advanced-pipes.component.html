@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Example with i18Select Pipe</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Shipped to</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of products">
+                <td>{{item.Name}}</td>
+                <td>{{item.ShippedTo}}</td>
+                <td>{{item.ShippedTo | i18nSelect:status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

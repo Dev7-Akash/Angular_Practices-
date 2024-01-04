@@ -1,0 +1,19 @@
+<div style="height: 400px;" class="container p-4 m-3 bg-dark text-white">
+    <h2>Parent Component</h2>
+    {{msgFromChild}}
+    <br>
+    <div>
+        <ul>
+            <li *ngFor="let item of courseFromChilddata">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <br>
+    <app-child
+    [coursesFromParent]="courses"
+    [messageFromParent]="msg"
+    [productsFromParent]="products"
+    (ChildClick)="MessageFromChild($event)"
+    (CourseInfo)="CourseInfoFromChild($event)"></app-child>
+</div>

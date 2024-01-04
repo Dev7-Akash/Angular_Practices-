@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Product Details</h2>
+    <form [formGroup]="frmRegister" (submit)="Register(frmRegister.value)">
+        <dl>
+            <h3>Product Details</h3>
+            <dt>Name</dt>
+            <dd>
+                <input type="text" formControlName="Name" name="Name">
+            </dd>
+            <dd class="text-danger" *ngIf="Name.touched && Name.invalid">
+                <div *ngIf="Name.errors?.['required']">Name Is Required</div>
+                <div *ngIf="Name.errors?.['minLength']">Name Must Have Min 4 Characters</div>
+                <div *ngIf="Name.errors?.['maxLenght']">Name Must Have Max 10 Characters</div>
+            </dd>
+            <dt>Price</dt>
+            <dd>
+                <input type="text" formControlName="Price" name="Price">
+            </dd>
+            <dd class="text-danger" *ngIf="Price.touched && Price.invalid">
+                <div *ngIf="Price.errors?.['pattern' ]"> Invalid Number</div>
+            </dd>
+        </dl>
+        <div class="mt-2 mb-3">
+            <h3>Upload Photos</h3>
+            <button type="btn" (click)="Addmore()" class="btn btn-primary">Add More</button>
+            <div class="mt-2 mb-3" *ngFor="let item of Photos.controls;let i=index">
+              <input type="file" formControlName="i" name="i">
+              <button class="btn btn-danger" (click)="RemovePhoto(i)">Remove</button>  
+            </div>
+        </div>
+        <div formGroupName="frmVendor" class="mt-2">
+            <h3>Vendor Details</h3>
+            <dl>
+                <dt>Vendor Name</dt>
+                <dd>
+                    <input type="text" formControlName="VendorName" name="VendorName">
+                </dd>
+                <dt>Vendor Rating</dt>
+                <dd>
+                    <input type="number" formControlName="VendorRating" name="VendorRating">    
+                </dd>
+            </dl>
+        </div>
+        <button>Register</button>
+    </form>
+</div>

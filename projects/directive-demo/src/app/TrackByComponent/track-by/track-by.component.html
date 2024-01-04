@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="mt-4">
+        <table class="table table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tr *ngFor="let item of products;trackBy:TrackChanges;">
+                <td>{{item.Name}}</td>
+                <td>{{item.Price}}</td>
+            </tr>
+        </table>
+        <div>
+            <button (click)="UpdateClick()">Get Latest Data</button>
+        </div>
+    </div>
+</div>
+
+
+<h6>https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY&quot</h6>
+
+
+
+
